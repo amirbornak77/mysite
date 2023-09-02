@@ -60,8 +60,8 @@
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li><a href="index.html">Home</a></li>
-				          <li><a href="about.html">About</a></li>
+				          <li><a href="{% url 'website:index' %}">Home</a></li>
+				          <li><a href="{% url 'website:about' %}">About</a></li>
 				          <li><a href="packages.html">Packages</a></li>
 				          <li><a href="hotels.html">Hotels</a></li>
 				          <li><a href="insurance.html">Insurence</a></li>
@@ -98,7 +98,7 @@
 							<h1 class="text-white">
 								Blog Details Page				
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="blog-home.html">Blog </a> <span class="lnr lnr-arrow-right"></span> <a href="blog-single.html"> Blog Details Page</a></p>
+							<p class="text-white link-nav"><a href="{% url 'website:index' %}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'blog:index' %}">Blog </a> <span class="lnr lnr-arrow-right"></span> <a href="blog-single.html"> Blog Details Page</a></p>
 						</div>	
 					</div>
 				</div>
