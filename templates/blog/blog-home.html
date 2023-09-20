@@ -71,25 +71,19 @@
             <ul class="nav-menu">
               <li><a href="{% url 'website:index' %}">Home</a></li>
               <li><a href="{% url 'website:about' %}">About</a></li>
-              <li><a href="packages.html">Packages</a></li>
-              <li><a href="hotels.html">Hotels</a></li>
-              <li><a href="insurance.html">Insurence</a></li>
               <li class="menu-has-children">
-                <a href="">Blog</a>
-                <ul>
-                  <li><a href="{% url 'blog:index' %}">Blog Home</a></li>
-                  <li><a href="#">Blog Single</a></li>
-                </ul>
+                <a href="{% url 'blog:index' %}">Blog</a>
+                
               </li>
-              <li class="menu-has-children">
-                <a href="">Pages</a>
+              
+                
                 <ul>
-                  <li><a href="elements.html">Elements</a></li>
+                  <li></li>
                   <li class="menu-has-children">
-                    <a href="">Level 2 </a>
+                    
                     <ul>
-                      <li><a href="#">Item One</a></li>
-                      <li><a href="#">Item Two</a></li>
+                      <li></li>
+                      <li></li>
                     </ul>
                   </li>
                 </ul>
@@ -206,14 +200,11 @@
             <div class="single-post row">
               <div class="col-lg-3 col-md-3 meta-details">
                 <ul class="tags">
-                  <li><a href="#">Food,</a></li>
-                  <li><a href="#">Technology,</a></li>
-                  <li><a href="#">Politics,</a></li>
-                  <li><a href="#">Lifestyle</a></li>
-                </ul>
+                  {{post.category.all | join:", "}}
+                  </ul>
                 <div class="user-details row">
                   <p class="user-name col-lg-12 col-md-12 col-6">
-                    <a href="#">Mark wiens</a>
+                    <a href="#">{{post.author.get_full_name}}</a>
                     <span class="lnr lnr-user"></span>
                   </p>
                   <p class="date col-lg-12 col-md-12 col-6">
@@ -234,11 +225,11 @@
                 <div class="feature-img">
                   <img
                     class="img-fluid"
-                    src="{% static 'img/blog/feature-img1.jpg' %}"
+                    src="{{post.image.url}}"
                     alt=""
                   />
                 </div>
-                <a class="posts-title" href="/blog/{{post.id}}"><h3>{{post.title}}</h3></a>
+                <a class="posts-title" href="{% url 'blog:single' pid=post.id %}"><h3>{{post.title}}</h3></a>
               
                 <p class="excert">{{post.content}}</p>
                 <a href="blog-single.html" class="primary-btn">View More</a>
