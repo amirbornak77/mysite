@@ -14,11 +14,13 @@ def blog_single(request, pid):
     post = get_object_or_404(posts, pk=pid)
     post.counted_views += 1
     post.save()
-    context = {'post': post}
+    next_post =  posts.filter(id__gt = post.id).order_by('id').first()
+    previous_post = posts.filter(id__lt=post.id).order_by('-id').first()
+    
+    context = {
+        'post': post,
+        'next_post': next_post,
+        'previous_post': previous_post,
+        }
     return render(request, 'blog/blog-single.html', context)
 
-# def test_view(request, pid): 
-#     # post = Post.objects.get(id=pid)
-#     post = get_object_or_404(Post, pk=pid)
-#     context = {'post': post}
-#     return render(request,'test.html', context)
