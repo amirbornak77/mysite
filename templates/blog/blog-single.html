@@ -193,7 +193,7 @@
                     <a href="{% url 'blog:single' pid=previous_post.id %}"
                       ><img
                         class="img-fluid"
-                        src="{% static 'img/blog/prev.jpg' %}"
+                        src="{{previous_post.image.url}}"
                         alt=""
                     /></a>
                   </div>
@@ -228,7 +228,7 @@
                     <a href="{% url 'blog:single' pid=next_post.id %}"
                       ><img
                         class="img-fluid"
-                        src="{% static 'img/blog/next.jpg' %}"
+                        src="{{next_post.image.url}}"
                         alt=""
                     /></a>
                     {% endif %}
