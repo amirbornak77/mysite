@@ -19,8 +19,11 @@ def blog_single(request, pid):
     
     context = {
         'post': post,
-        'next_post': next_post,
+        'next_post': next_post, 
         'previous_post': previous_post,
         }
     return render(request, 'blog/blog-single.html', context)
+
+def test_view(request):
+    return render(request, 'test.html')
 
