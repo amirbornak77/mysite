@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load blog_tags %}
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
   <head>
@@ -269,9 +269,9 @@
             <div class="widget-wrap">
               {% include 'blog/blog-search-wiget.html' %}
               {% include 'blog/blog-writer.html' %}
-              {% include 'blog/blog-popular-post.html' %}
+              {% latesposts %}
               {% include 'blog/blog-ads.html' %}
-              {% include 'blog/blog-post-category-widget.html' %}
+              {% postcategories %}
               {% include 'blog/blog-newsletter.html' %}
               {% include 'blog/blog-tag-cloud.html' %}
             </div>

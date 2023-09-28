@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1>Testing page</h1>
-    <p>test: {% post_count %} </p>
-        {% totallposts as posts %}
+    <p>test: </p>
+        {% CotePosts %}
+</html>
+        {% comment %} {% totallposts as posts %}
         {% for post in posts %}
             <li>{{ post }}</li>
-        {% endfor %}    
-</body>
-</html>
+        {% endfor %}    {% endcomment %}

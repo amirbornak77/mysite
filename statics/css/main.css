@@ -3656,6 +3656,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .widget-wrap .popular-post-widget .popular-post-list .thumb img {
   width: 100%;
+  max-width: 100px;
 }
 
 .widget-wrap .popular-post-widget .single-post-list {
@@ -3929,6 +3930,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 767px) {
   .single-post-area .navigation-area .nav-left {
     margin-bottom: 30px;
+    max-width: 50px;
   }
 }
 
