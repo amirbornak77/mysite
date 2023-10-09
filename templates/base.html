@@ -125,7 +125,15 @@
 								<h6>Newsletter</h6>
 								<p>
 									For business professionals caught between high OEM price and mediocre print and graphic output.									
-								</p>								
+								</p>
+								{% if messages %}
+								<ul class="messages">
+    							{% for message in messages %}
+    								<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    							{% endfor %}
+								</ul>
+
+								{% endif %}								
 								<div>
 									<form  action="{% url 'website:newsletter' %}" method="post" class="subscription relative">
 									 {% csrf_token %} 
@@ -164,12 +172,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<a href="#"><i class="fa fa-twitter"></i></a>
 							<a href="#"><i class="fa fa-dribbble"></i></a>
 							<a href="#"><i class="fa fa-behance"></i></a>
-							<div id="message-container" style="display: none;">
-    						    	<div id="popup-notification">
-        						<div class="notification-content">
-            					<span id="notification-message"></span>
-            					<button id="close-notification">Close</button>
-        							</div>
     							</div>
 							</div>
 						</div>
