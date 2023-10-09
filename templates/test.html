@@ -7,11 +7,12 @@
     <title>test</title>
 </head>
 <body>
-    <h1>Testing page</h1>
-    <p>test: </p>
-        {% CotePosts %}
+    <form action="{% url 'website:test' %}"method="post">
+         {% csrf_token %} 
+        {% comment %} <label>name:</label>
+        <input sname="name" type="text"><br>  {% endcomment %}
+        {{form.as_p}}
+        <button type="submit">submit</button>
+
+    </form>
 </html>
-        {% comment %} {% totallposts as posts %}
-        {% for post in posts %}
-            <li>{{ post }}</li>
-        {% endfor %}    {% endcomment %}

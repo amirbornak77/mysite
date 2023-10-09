@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 from django.utils import timezone
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+from django.views.decorators.csrf import csrf_protect
 # Create your views here.
 def blog_view(request,**kwargs):
     current_time = timezone.now()
@@ -52,6 +53,4 @@ def blog_search(request):
     return render(request, 'blog/blog-home.html', context)
 
 
-def test_view(request):
-    return render(request, 'test.html')
 
