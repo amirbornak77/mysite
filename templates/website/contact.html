@@ -54,14 +54,6 @@
 								</div>
 							</div>														
 						</div>
-						   {% if messages %}
-							<ul class="messages">
-    							{% for message in messages %}
-    							<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    							{% endfor %}
-								</ul>
-
-								{% endif %}
 						<div class="col-lg-8">
 							<form class="form-area contact-form text-right"  action="{% url 'website:contact' %}" method="post">
 								<div class="row">
