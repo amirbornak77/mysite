@@ -15,6 +15,7 @@ import os
 import debug_toolbar
 import django_extensions
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,14 +44,15 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
     'django.contrib.sitemaps',
-    
-    'captcha',
     'django.contrib.sites',
     "debug_toolbar",
     'taggit',
     'robots',
+    'captcha',
     'django_summernote',
     'django_extensions',
+    'accounts',
+    
 ]
 # Site framework
 SITE_ID = 2
@@ -75,7 +77,9 @@ SUMMERNOTE_CONFIG = {
             ['view', ['fullscreen', 'codeview', 'help']],
         ],
     }
-         
+
+LOGIN_URL = 'accounts:login' 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -172,3 +176,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 X_FRAME_OPTIONS = "SAMEORIGIN"
+
+
+RECAPTCHA_PUBLIC_KEY = '6LcFbdQoAAAAAM7Sm_xRLAVZ1iPoM2eWOQupb8a5'
+RECAPTCHA_PRIVATE_KEY = '6LcFbdQoAAAAALTQBRbeJ63W0oEyPZXng8HsOD5i'

@@ -3,7 +3,10 @@ from blog.models import Post
 from django.utils import timezone
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+@login_required(redirect_field_name="accounts/login.html")
 def blog_view(request,**kwargs):
     current_time = timezone.now()
     posts = Post.objects.filter(status=1, published_date__lte=current_time)
